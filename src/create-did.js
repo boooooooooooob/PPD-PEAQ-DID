@@ -1,4 +1,4 @@
-const { Sdk } = require('@peaq-network/sdk')
+import { Sdk } from '@peaq-network/sdk'
 
 const DIDname = 'PPDDID'
 const mnemonicSeed = process.env.PEAQ_MNEMONIC_SEED
@@ -27,3 +27,5 @@ createPeaqDID(DIDname, mnemonicSeed)
   .catch((error) => {
     console.error(`Error creating peaq DID: ${error}`)
   })
+
+export { createPeaqDID }
