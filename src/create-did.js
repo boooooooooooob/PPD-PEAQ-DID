@@ -2,10 +2,12 @@ const { Sdk } = require('@peaq-network/sdk')
 
 const DIDname = 'PPDDID'
 const mnemonicSeed = process.env.PEAQ_MNEMONIC_SEED
+const peaqWSEndpoint = process.env.PEAQ_WS_ENDPOINT
 
 const createPeaqDID = async (name, seed) => {
   const sdkInstance = await Sdk.createInstance({
-    baseUrl: 'wss://wss-krest.peaq.network',
+    // e.g. wss://wss-krest.peaq.network for krest network
+    baseUrl: peaqWSEndpoint,
     seed,
   })
 
